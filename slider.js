@@ -1,5 +1,5 @@
 class slider {
-    sliderIndex = 1;
+    slideIndex = 1;
 
     constructor(options) {
         this.options = options;
