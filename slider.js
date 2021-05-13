@@ -4,6 +4,11 @@ class slider {
     constructor(options) {
         this.options = options;
         this.initialStuff();
+
+        this.createNextAndPrevBtns()
+        this.createDots();
+
+        this.showSlides(1);
     }
 
     initialStuff () {
