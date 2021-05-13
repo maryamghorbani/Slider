@@ -12,7 +12,7 @@ class slider {
         if ( ! sliderElement ) throw  Error('Slider element is not exists');
 
         Number.isInteger(auto) ? this.auto = auto : this.auto = 0;
-
-        console.log(auto)
+        this.sliders = [ ...sliderElement.children].filter(elm => elm.classList.contains(slideClass));
+        console.log(sliders);
     }
 }
