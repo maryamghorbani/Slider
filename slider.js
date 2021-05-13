@@ -28,15 +28,20 @@ class slider {
            <a class= "prev">&#10094;</a>
         `);
 
-        sliderElement.querySelector('.next').addEventListener('click', () => console.log('click'));
-        sliderElement.querySelector('.prev').addEventListener('click', () => console.log('click'))
+        sliderElement.querySelector('.next').addEventListener('click', () => this.incrementSlide());
+        sliderElement.querySelector('.prev').addEventListener('click', () => this.decrementSlide())
     }
+
+    incrementSlide = () => this.showSlides(this.sliderIndex += 1)
+    decrementSlide = () => this.showSlides(this.sliderIndex -= 1)
 
     createDots() {
 
     }
 
     showSlides(number) {
-
+        if (number > this.sliders.length) this.sliderIndex = 1;
+        if (number < 1) this.sliderIndex = this.sliders.length;
+        
     }
 }
