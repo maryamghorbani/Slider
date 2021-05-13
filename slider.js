@@ -9,6 +9,7 @@ class slider {
         this.createDots();
 
         this.showSlides(1);
+        this.setInterval();
     }
 
 
@@ -33,9 +34,18 @@ class slider {
         sliderElement.querySelector('.prev').addEventListener('click' , () => this.decrementSlide())
     }
 
-    incrementSlide = () => this.showSlides(this.slideIndex += 1)
-    decrementSlide = () => this.showSlides(this.slideIndex -= 1)
-    currentSlide = n => this.showSlides(this.slideIndex = n)
+    incrementSlide = () => {
+        this.resetInterval();
+        this.showSlides(this.slideIndex += 1)
+    }
+    decrementSlide = () => {
+        this.resetInterval();
+        this.showSlides(this.slideIndex -= 1)
+    }
+    currentSlide = n => {
+        this.resetInterval();
+        this.showSlides(this.slideIndex = n)
+    }
 
     createDots() {
         let { el : sliderElement} = this.options;
@@ -67,5 +77,16 @@ class slider {
         this.dots[this.slideIndex-1].classList.add('active')
 
         if(currentSlider) currentSlider(this.sliders[this.slideIndex-1])
+    }
+
+    setInterval() {
+        if (this.auto != 0) {
+            this.intervalID = setInterval(() => this.showSlides(this.slideIndex +=  1) , this.auto);
+        }
+    }
+
+    resetInterval() {
+        clearInterval(this.intervalID);
+        this.setInterval();
     }
 }
