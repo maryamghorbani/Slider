@@ -45,6 +45,9 @@ class slider {
 
         sliderElement.after(dots)
 
+        this.dots = dots.querySelectorAll('.dot');
+        this.dots.forEach( dot => dot.addEventListener('click', e => console.log(e)))
+
         console.log(dots)
     }
 
