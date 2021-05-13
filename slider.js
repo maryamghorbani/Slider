@@ -27,6 +27,8 @@ class slider {
            <a class= "next">&#10095;</a>
            <a class= "prev">&#10094;</a>
         `);
+
+        sliderElement.querySelector('.next').addEventListener('click', () => console.log('click'))
     }
 
     createDots() {
