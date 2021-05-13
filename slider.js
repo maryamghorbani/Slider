@@ -20,4 +20,20 @@ class slider {
         this.sliders = [ ...sliderElement.children].filter(elm => elm.classList.contains(slideClass));
         console.log(sliders);
     }
+
+    createNextAndPrevBtns () {
+        let { el : sliderElement } = this.options;
+        sliderElement.insertAdjacentHTML('beforeend' , `
+           <a class= "next">&#10095;</a>
+           <a class= "prev">&#10094;</a>
+        `);
+    }
+
+    createDots() {
+
+    }
+
+    showSlides(number) {
+
+    }
 }
