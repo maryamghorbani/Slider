@@ -28,7 +28,8 @@ class slider {
            <a class= "prev">&#10094;</a>
         `);
 
-        sliderElement.querySelector('.next').addEventListener('click', () => console.log('click'))
+        sliderElement.querySelector('.next').addEventListener('click', () => console.log('click'));
+        sliderElement.querySelector('.prev').addEventListener('click', () => console.log('click'))
     }
 
     createDots() {
